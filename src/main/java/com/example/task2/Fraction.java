@@ -5,7 +5,6 @@ import lombok.*;
 @Getter
 public class Fraction implements Fractionable {
     private int num;
-
     private int denum;
 
     public Fraction(int num, int denum) {
@@ -26,17 +25,7 @@ public class Fraction implements Fractionable {
     @Override
     @Cache
     public double doubleValue() {
-//        System.out.println("invoke double value no cached");
+        System.out.println("invoke doubleValue()");
         return (double) num / denum;
-    }
-
-    @Override
-    @Cache
-    public String toString() {
-//        System.out.println("toString no cached");
-        return "Fraction{" +
-                "num=" + num +
-                ", denum=" + denum +
-                '}';
     }
 }
